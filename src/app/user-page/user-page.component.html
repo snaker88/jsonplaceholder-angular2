@@ -1,0 +1,35 @@
+<div class="user_description" *ngFor="let user of user">
+    <div class="user_name">
+        <div class="wrapper">
+            <h3>{{user.name}}</h3>
+        </div>
+    </div>
+    <div class="user_options">
+        <div class="wrapper">
+            <ul>
+                <li><span>{{user.email}}</span></li>
+                <li><span>{{user.phone}}</span></li>
+                <li><span>{{user.website}}</span></li>
+                <li><span>{{user.company.name}}</span></li>
+                <li><span>{{user.company.bs}}</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="user_posts">
+    <div class="wrapper">
+        <h3>Posts</h3>
+        <div class="posts_list">
+            <a class="posts_list__post post" *ngFor="let post of post" [routerLink]="[post.id]">
+                <div class="post__title">
+                    <h4>{{post.title | titlecase}}</h4>
+                </div>
+                <div class="post__description">
+                    {{post.body.substring(0, 50)}}...
+                </div>
+            </a>
+        </div>
+        <button (click)="showPosts()">{{showText}}</button>
+    </div>
+</div>

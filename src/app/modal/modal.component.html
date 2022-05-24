@@ -1,0 +1,21 @@
+<h3>Add Commetn</h3>
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field>
+        <input placeholder="comment.name" matInput type="text" [(ngModel)]="data.name" formControlName="myName">
+        <mat-error *ngIf="myError('myName', 'minlength')">the form must not be empty
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input placeholder="comment.email" matInput type="text" [(ngModel)]="data.email" formControlName="myEmail">
+        <mat-error *ngIf="myError('myEmail', 'email')">email type error</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input placeholder="comment.body" matInput type="text" [(ngModel)]="data.body" formControlName="myBody">
+        <mat-error *ngIf="myError('myBody', 'minlength')">the form must not be empty
+        </mat-error>
+    </mat-form-field>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">Close</button>
+        <button [disabled]="form.invalid" mat-button type="submit" [mat-dialog-close]="data" cdkFocusInitial>Add Comment</button>
+    </div>
+</form>

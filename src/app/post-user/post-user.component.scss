@@ -1,0 +1,37 @@
+.comments {
+    button {
+        text-align: center;
+        padding: 10px 20px;
+        color: white;
+        min-width: 115px;
+        background: #101010;
+        border: none;
+        font-weight: 600;
+        font-size: 11px;
+        margin-bottom: 20px;
+        line-height: normal;
+        border-radius: 0;
+    }
+}
+
+.comment {
+    border: 1px solid #DADADA;
+    box-sizing: border-box;
+    display: flex;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    padding: 0 17px 15px;
+    span {
+        width: 100%;
+        font-weight: 400;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.41);
+    }
+    h4 {
+        margin: 20px 0 0;
+        width: 100%;
+    }
+    p {
+        margin: 10px 0;
+    }
+}
